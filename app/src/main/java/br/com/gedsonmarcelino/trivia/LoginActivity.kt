@@ -5,6 +5,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import br.com.gedsonmarcelino.trivia.utils.AppConstants
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,8 +15,14 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            v.setPadding(
+                systemBars.left + AppConstants.UI.PADDING_HORIZONTAL,
+                systemBars.top,
+                systemBars.right + AppConstants.UI.PADDING_HORIZONTAL,
+                systemBars.bottom
+            )
             insets
         }
+
     }
 }

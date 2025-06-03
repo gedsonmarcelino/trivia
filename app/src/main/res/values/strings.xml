@@ -3,4 +3,12 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="username">Username</string>
+    <string name="logo">logo</string>
+    <string name="or_continue_with">OR CONTINUE WITH</string>
+    <string name="google">Google</string>
+    <string name="dont_have_any_account">Dont have any account?</string>
+    <string name="create_account">Create account</string>
 </resources>
