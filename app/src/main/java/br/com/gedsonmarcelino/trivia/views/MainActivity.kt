@@ -1,4 +1,4 @@
-package br.com.gedsonmarcelino.trivia
+package br.com.gedsonmarcelino.trivia.views
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -7,6 +7,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import br.com.gedsonmarcelino.trivia.R
 import br.com.gedsonmarcelino.trivia.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
