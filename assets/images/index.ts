@@ -4,7 +4,10 @@ import ImageGeographt from './geography.png'
 import ImageGoogle from './google.png'
 import ImageHistory from './history.png'
 import ImageLogo from './logo.png'
+import ImageLogout from './logout.png'
+import ImageProfile from './profile.png'
 import ImageRandom from './random.png'
+import ImageRanking from './ranking.png'
 import ImageScience from './science.png'
 
 export const Images = {
@@ -15,5 +18,8 @@ export const Images = {
   science: ImageScience,
   random: ImageRandom,
   entertainment: ImageEntertainment,
-  geography: ImageGeographt
+  geography: ImageGeographt,
+  profile: ImageProfile,
+  ranking: ImageRanking,
+  logout: ImageLogout
 }
