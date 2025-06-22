@@ -1,14 +1,14 @@
 import ImageBack from './back.png'
-import ImageEntertainment from './entertainment.png'
-import ImageGeographt from './geography.png'
+import ImageEntertainment from './categories/entertainment.png'
+import ImageGeographt from './categories/geography.png'
+import ImageHistory from './categories/history.png'
+import ImageRandom from './categories/random.png'
+import ImageScience from './categories/science.png'
 import ImageGoogle from './google.png'
-import ImageHistory from './history.png'
 import ImageLogo from './logo.png'
 import ImageLogout from './logout.png'
-import ImageProfile from './profile.png'
-import ImageRandom from './random.png'
-import ImageRanking from './ranking.png'
-import ImageScience from './science.png'
+import ImageProfile from './menu/profile.png'
+import ImageRanking from './menu/ranking.png'
 
 export const Images = {
   logo: ImageLogo,
