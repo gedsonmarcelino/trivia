@@ -6,15 +6,27 @@ import {Container} from '@/components/ui/Container';
 import {Image} from '@/components/ui/Image';
 import {Text} from '@/components/ui/Text';
 import {TextInput} from '@/components/ui/TextInput';
+import {useAuth} from '@/hooks/useAuth';
 import {useRouter} from 'expo-router';
 import React, {useState} from 'react';
+import {Alert} from 'react-native';
 
 export default function Index() {
 
   const router = useRouter()
+  const auth = useAuth()
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+
+  const handleLogin = async () => {
+    try {
+      await auth.login(username, password)
+      router.navigate('/home')
+    } catch (error: Error | any) {
+      Alert.alert('Login failed', error.message)
+    }
+  }
 
   const handleCreateAccount = () => {
     router.navigate('/createAccount')
@@ -34,7 +46,7 @@ export default function Index() {
       value={password}
       style={styles.input}
       onChange={event => setPassword(event.nativeEvent.text)} />
-    <Button.Root type='primary' style={styles.button}>
+    <Button.Root type='primary' style={styles.button} onPress={handleLogin}>
       <Button.Text type='buttonPrimary'>Sign In</Button.Text>
     </Button.Root>
     <TextLine />
