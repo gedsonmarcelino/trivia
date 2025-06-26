@@ -6,19 +6,20 @@ const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 50,
   },
+  logout: {
+    alignSelf: 'flex-end'
+  },
   title: {
     marginTop: 94,
     marginBottom: 26
   },
-  input: {
-    marginBottom: 20
-  }
+
 });
 
-export default function Home() {
+export default function Ranking() {
   return (
-    <Container style={styles.container}>
-      <Text type="title" style={styles.title}>Home...</Text>
+    <Container>
+      <Text>Ranking...</Text>
     </Container>
   );
 }

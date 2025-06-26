@@ -19,10 +19,16 @@ export default function Index() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+  const clearFields = () => {
+    setUsername('')
+    setPassword('')
+  }
+
   const handleLogin = async () => {
     try {
       await auth.login(username, password)
-      router.navigate('/home')
+      clearFields()
+      router.navigate('/(tabs)')
     } catch (error: Error | any) {
       Alert.alert('Login failed', error.message)
     }

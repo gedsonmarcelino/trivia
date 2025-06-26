@@ -23,7 +23,10 @@ export default function RootLayout() {
       <StatusBar hidden />
       <Stack screenOptions={{
         headerShown: false,
-      }} />
+      }}>
+        <Stack.Screen name="(tabs)" options={{headerShown: false}} />
+      </Stack>
+
     </ThemeProvider>
   );
 }
