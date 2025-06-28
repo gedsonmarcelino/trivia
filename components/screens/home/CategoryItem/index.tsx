@@ -1,7 +1,8 @@
 import {ImageType} from "@/assets/images/types";
 import {Image} from "@/components/ui/Image";
 import {Text} from "@/components/ui/Text";
-import {StyleSheet, View} from "react-native";
+import {useRouter} from "expo-router";
+import {Pressable, StyleSheet} from "react-native";
 
 export type CategoryItemProps = {
   item: {
@@ -28,10 +29,17 @@ const styles = StyleSheet.create({
 })
 
 export function CategoryItem({item}: CategoryItemProps) {
+
+  const router = useRouter()
+
+  const handlePress = () => {
+    router.navigate(`/question?category=${item.title}`)
+  }
+
   return (
-    <View key={item.id} style={styles.container}>
+    <Pressable key={item.id} style={styles.container} onPress={handlePress}>
       <Image type={item.image} />
       <Text>{item.title}</Text>
-    </View>
+    </Pressable>
   )
 }
