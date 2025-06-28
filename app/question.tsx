@@ -10,9 +10,22 @@ export default function Question() {
 
   const router = useRouter()
   const {category} = useLocalSearchParams()
-  console.log('category :>> ', category);
 
-  const {current, total, data, correctAnswers, isLast, isPending, error, nextQuestion, checkAnswer} = useQuestions(category as string || 'general')
+  const {
+    current,
+    total,
+    data,
+    correctAnswers,
+    isLast,
+    isPending,
+    error,
+    nextQuestion,
+    checkAnswer
+  } = useQuestions(category as string || 'general')
+
+  const question = useMemo(() => {
+    return data[current] || {}
+  }, [data, current])
 
   const handleBack = () => {
     router.back()
@@ -23,14 +36,20 @@ export default function Question() {
     nextQuestion()
   }
 
-  const question = useMemo(() => {
-    return data[current] || {}
-  }, [data, current])
+  const handleLastAnswer = () => {
+    if (isLast) {
+      const params = new URLSearchParams({
+        category: category,
+        total: total,
+        correctAnswers: correctAnswers
+      } as any)
+      router.replace(`/result?${params}`)
+    }
+  }
 
   useEffect(() => {
-    if (isLast) {
-      router.replace(`/result?category=${category}&total=${total}&correctAnswers=${correctAnswers}`)
-    }
+    handleLastAnswer()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLast])
 
   if (isPending) return <></>

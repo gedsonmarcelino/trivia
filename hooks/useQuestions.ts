@@ -27,7 +27,6 @@ export const useQuestions = (category:string) => {
   }
 
   const checkAnswer = (answer: string) => {
-    console.log('correct_answer :>> ', answer === dataMapped[current].correct_answer);
     if (answer === dataMapped[current].correct_answer) {
       setCorrectAnswers(prev => prev + 1)
     }
